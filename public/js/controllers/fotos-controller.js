@@ -6,12 +6,20 @@ var app = angular.module('alurapic');
 
 app.controller('FotosController', function ($scope, $http) {
 
+    $scope.fotos = [];
+    $scope.filtro = "";
+
     $http.get('v1/fotos')
         .success(function (result) {
             $scope.fotos = result;
         }).error(function (err) {
             console.log(err);
         });
+
+
+
+
+
     // $scope.fotos = [
     //     {
     //         url : "http://pngimg.com/upload/audi_PNG1736.png",
@@ -26,5 +34,4 @@ app.controller('FotosController', function ($scope, $http) {
     //         titulo : "White Car"
     //     }
     // ];
-
 });
