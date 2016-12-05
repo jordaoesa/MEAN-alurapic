@@ -3,4 +3,4 @@
  */
 
 
-angular.module('alurapic', []);
+angular.module('alurapic', ['minhasDiretivas']);
