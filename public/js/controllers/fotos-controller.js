@@ -8,6 +8,7 @@ app.controller('FotosController', function ($scope, $http) {
 
     $scope.fotos = [];
     $scope.filtro = "";
+    $scope.mensagem = "";
 
     $http.get('v1/fotos')
         .success(function (result) {
@@ -16,7 +17,17 @@ app.controller('FotosController', function ($scope, $http) {
             console.log(err);
         });
 
-
+    $scope.remover = function(foto){
+        $http.delete('v1/fotos/'+foto._id).success(function () {
+            console.log('foto ' + foto.titulo + ' removida');
+            var indice = $scope.fotos.indexOf(foto);
+            $scope.fotos.splice(indice, 1);
+            $scope.mensagem = "foto" + foto.titulo + " removida com sucesso";
+        }).error(function (err) {
+            console.log(err);
+            $scope.mensagem = "falha ao remover foto";
+        });
+    };
 
 
 

@@ -18,4 +18,8 @@ app.config(function ($routeProvider, $locationProvider) {
         templateUrl: 'partials/foto.html',
         controller: 'FotoController'
     });
+    $routeProvider.when('/fotos/edit/:fotoId', {
+        templateUrl: 'partials/foto.html',
+        controller: 'FotoController'
+    });
 });
