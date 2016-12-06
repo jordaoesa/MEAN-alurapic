@@ -18,6 +18,21 @@ minhasDiretivas.directive('meuPainel', function () {
     return ddo;
 });
 
+minhasDiretivas.directive('minhaFoto', function () {
+    var ddo = {}; // Directive Definition Object
+
+    ddo.restrict = "AE"; // Attribute Element
+    ddo.scope = {
+        titulo: '@titulo',
+        url: '@url'
+    };
+    ddo.transclude = true; // Usado caso a diretiva tenha q utilizar algum html extra la na pagina estatica
+    ddo.templateUrl = "js/directives/minha-foto.html";
+
+
+    return ddo;
+});
+
 // o nome da diretiva deve ser escrito em camel case
 // a utilizacao da mesma deve utilizar hifen, por definicao
 // <div meu-painel></div> Attribute

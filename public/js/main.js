@@ -15,6 +15,7 @@ app.config(function ($routeProvider, $locationProvider) {
         controller: 'FotosController'
     });
     $routeProvider.when('/fotos/new', {
-        templateUrl: 'partials/foto.html'
+        templateUrl: 'partials/foto.html',
+        controller: 'FotoController'
     });
 });
